@@ -67,7 +67,7 @@ public class HomeWork2 {
 		}
 		System.out.println("\n-----------------");
 
-		// 用for+while
+		// 用for+while 做九九乘法
 		for (i = 1; i <= 9; i++) {
 			j = 1;
 			while (j <= 9) {
@@ -79,7 +79,7 @@ public class HomeWork2 {
 
 		System.out.println("\n-----------------");
 
-		// 用for+do while
+		// 用for+do while 做九九乘法
 		for (i = 1; i <= 9; i++) {
 			j = 1;
 			do {
@@ -90,7 +90,7 @@ public class HomeWork2 {
 		}
 
 		System.out.println("\n-----------------");
-		// 用while+do while
+		// 用while+do while 做九九乘法
 
 		i = 1;
 		while (i <= 9) {
