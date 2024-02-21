@@ -27,12 +27,12 @@ public class CalTest extends CalException {
 			} else if (y < 0) {
 				try {
 					throw new CalException();
-				}catch (CalException ex) {
+				} catch (CalException ex) {
 					ex.checkY();
 				}
-				
+
 			} else {
-				System.out.println(e.powerXY(x, y));
+				System.out.println(x+"的"+y+"次方為"+e.powerXY(x, y));
 			}
 
 		} catch (InputMismatchException ex) {
