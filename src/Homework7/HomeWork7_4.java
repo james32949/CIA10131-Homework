@@ -8,6 +8,7 @@ import java.io.Serializable;
 public class HomeWork7_4 implements Serializable {
 
 	public static void main(String[] args) {
+		
 		Dog dog1 = new Dog("jack");
 		Dog dog2 = new Dog("jason");
 		Cat cat1 = new Cat("jessica");
