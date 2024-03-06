@@ -1,14 +1,13 @@
 package HomeWork9;
 
-class bank {
+class Bank {
 	private int money = 0;
 
 	synchronized public void saveMoney(int money) {
-		if (this.money > 3000) {
+		while (this.money > 3000) {
 			System.out.println("存款超過三千 不在存款");
 			try {
 				wait();
-
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
@@ -21,8 +20,9 @@ class bank {
 	}
 
 	synchronized public void takeMoney(int money) {
-		if (this.money < 2000) {
-			System.out.println("存款餘額不足 請求媽媽存款");
+
+		while (this.money < 1000) {
+			System.out.println("存款餘額不足");
 			try {
 				wait();
 
@@ -30,9 +30,15 @@ class bank {
 				e.printStackTrace();
 			}
 		}
+
 		this.money = this.money - money;
 		System.out.println("雄大提了" + money);
 		System.out.println("目前帳戶餘額:" + this.money);
+		if(this.money==2000) {
+			System.out.println("請求媽媽存款");
+			notify();
+		}
+		
 		System.out.println("=====================");
 		notify();
 	}
@@ -42,10 +48,10 @@ class bank {
 	}
 }
 
-class mom extends Thread {
-	bank account;
+class Mom extends Thread {
+	Bank account;
 
-	public mom(bank account) {
+	public Mom(Bank account) {
 		this.account = account;
 	}
 
@@ -56,10 +62,10 @@ class mom extends Thread {
 	}
 }
 
-class son extends Thread {
-	bank account;
+class Son extends Thread {
+	Bank account;
 
-	public son(bank account) {
+	public Son(Bank account) {
 		this.account = account;
 	}
 
@@ -73,12 +79,12 @@ class son extends Thread {
 public class HomeWork9_2 {
 	public static void main(String[] arge) {
 
-		bank account = new bank();
+		Bank account = new Bank();
 		System.out.println("目前帳戶餘額:" + account.getMoney());
-		son son = new son(account);
-		mom mom = new mom(account);
+		Son son = new Son(account);
+		Mom mom = new Mom(account);
 		mom.start();
 		son.start();
-		
+
 	}
 }
