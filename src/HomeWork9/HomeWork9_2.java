@@ -5,7 +5,9 @@ class Bank {
 
 	synchronized public void saveMoney(int money) {
 		while (this.money > 3000) {
-			System.out.println("存款超過三千 不在存款");
+			System.out.println("媽媽看見存款超過三千 暫停存款");
+			System.out.println("雄大被告知帳戶已經有錢");
+
 			try {
 				wait();
 			} catch (InterruptedException e) {
@@ -15,6 +17,7 @@ class Bank {
 		this.money = this.money + money;
 		System.out.println("媽媽存了:" + money);
 		System.out.println("目前帳戶餘額:" + this.money);
+
 		System.out.println("=====================");
 		notify();
 	}
@@ -34,11 +37,11 @@ class Bank {
 		this.money = this.money - money;
 		System.out.println("雄大提了" + money);
 		System.out.println("目前帳戶餘額:" + this.money);
-		if(this.money==2000) {
-			System.out.println("請求媽媽存款");
+		if (this.money <= 1000) {
+			System.out.println("雄大看見餘額不足2000請求媽媽存款");
 			notify();
 		}
-		
+
 		System.out.println("=====================");
 		notify();
 	}
