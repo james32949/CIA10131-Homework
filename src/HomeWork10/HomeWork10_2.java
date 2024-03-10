@@ -37,37 +37,37 @@ public class HomeWork10_2 {
 		int j;
 
 		while (true) {
+
 			j = sc.nextInt();
+
 			switch (j) {
-			case 1:				
+			case 1:
 				Format dfm1 = new DecimalFormat("#,###.00");
 				System.out.println(dfm1.format(i));
 				break;
+
 			case 2:
-//				System.out.format("%%", i);		
 				Format dfm2 = new DecimalFormat("0.##%");
 				System.out.println(dfm2.format(i));
 				break;
+
 			case 3:
-				System.out.format("%e", i);					
-//				Format dfm3 = new DecimalFormat("0.###E0");
-//				System.out.println(dfm3.format(i));
+				System.out.format("%e", i);
 				break;
+
 			default:
 				System.out.println("請輸入1~3");
 				continue;
 			}
+
 			break;
 		}
-
 	}
 
 	public static void main(String args[]) {
 		HomeWork10_2 obj = new HomeWork10_2();
 		obj.inputNumber();
-//		System.out.println(js.getI());
 		select(obj.getI());
-
 
 	}
 
