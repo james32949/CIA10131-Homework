@@ -36,7 +36,7 @@ public class HomeWork10_2 {
 		Scanner sc = new Scanner(System.in);
 		int j;
 
-		for (;;) {
+		while (true) {
 			j = sc.nextInt();
 			switch (j) {
 			case 1:				
@@ -57,7 +57,7 @@ public class HomeWork10_2 {
 				System.out.println("請輸入1~3");
 				continue;
 			}
-
+			break;
 		}
 
 	}
